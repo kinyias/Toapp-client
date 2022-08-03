@@ -1,0 +1,37 @@
+@media (min-width: 1023px) {
+  .theme-dark {
+    background: url(../assets/images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: $Dark-Theme-Very-Dark-Blue;
+  }
+  .wrapper {
+    margin: 6rem auto;
+    max-width: 480px;
+    width: 100%;
+    main {
+      .container {
+        .todo-list {
+          label {
+            cursor: pointer;
+          }
+          .close {
+            cursor: pointer;
+          }
+        }
+        .bottom-items {
+          .items-left {
+            cursor: pointer;
+          }
+          .clear {
+            cursor: pointer;
+          }
+          .clear:hover {
+            color: $Bright-Blue;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}

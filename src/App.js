@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/style.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Landing from './component/layout/Landing';
+import Auth from './views/Auth';
+import AuthContextProvider from './contexts/AuthContext';
+import Dashboard from './views/Dashboard';
+import ProtectedRoute from './component/routing/ProtectedRoute';
+import PostContextProvider from './contexts/PostContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContextProvider>
+      <PostContextProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route
+              exact
+              path="/login"
+              render={(prop) => <Auth {...prop} authRoute="login" />}
+            />
+            <Route
+              exact
+              path="/register"
+              render={(prop) => <Auth {...prop} authRoute="register" />}
+            />
+            <ProtectedRoute exact path="/todoapp" component={Dashboard} />
+          </Switch>
+        </Router>
+      </PostContextProvider>
+    </AuthContextProvider>
   );
 }
 

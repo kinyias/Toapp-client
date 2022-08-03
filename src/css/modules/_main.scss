@@ -1,0 +1,163 @@
+.theme-light{
+    background-color: $Very-Light-Gray;
+}
+.theme-dark{
+    color: $Light-Grayish-Blue;
+    background: url(../assets/images/bg-mobile-dark.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: $Dark-Theme-Very-Dark-Blue;
+    width: 100vw;
+}
+.wrapper{
+    margin: 3rem 1.6rem;
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: .5rem;
+            color: $Very-Light-Gray;
+        }
+        .btn-login{
+            font-size: 1rem;
+            padding: 0.6rem 1rem;
+            background-image: $Check-Background;
+            color: $Very-Light-Gray;
+            border-radius: 4px;
+        }
+    }
+    main{
+        .container{
+            margin-top: 2rem;
+            .add-items{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                padding: 1rem 1.5rem;
+                border-radius: 6px;
+                background-color: $Dark-Theme-Very-Dark-Grayish-Blue;
+                span{
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    border: 1px solid $Dark-Theme-Very-Dark-Grayish-Blue-1;
+                    border-radius: 999px;
+                    margin-right: .5rem;
+                }
+                #add-items{
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    width: 80%;
+                    height: 2rem;
+                    color: $Very-Light-Grayish-Blue;
+                    font-size: 1rem;
+                    caret-color: $Bright-Blue;
+                }
+                #add-items:focus{
+                    border: none;
+                }
+            }
+            .todo-list{
+                margin-top: 1.5rem;
+                background-color: $Dark-Theme-Very-Dark-Grayish-Blue;
+                border-radius: 6px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                .close{
+                    margin-right: 1rem;
+                }
+                ul{
+                    li{ 
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        z-index: 10;
+                        label{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            padding: 1rem 1.5rem;
+                        }
+                        .checkmark{
+                            display: block;
+                            width: 25px;
+                            height: 25px;
+                            border: 1px solid $Dark-Theme-Very-Dark-Grayish-Blue-1;
+                            border-radius: 999px;
+                            margin-right: .5rem;
+                        }
+                        input[type="checkbox"]:checked + .checkmark{
+                            position: relative;
+                            background-image: $Check-Background;
+                        }
+                        input[type="checkbox"]:checked + .checkmark::before{
+                            content: '';
+                            position: absolute;
+                            background: url(../assets/images/icon-check.svg);
+                            background-repeat: no-repeat;
+                            top: 80%;
+                            left: 70%;
+                            transform: translate(-50%,-50%);
+                            width: 20px;
+                            height: 20px;
+                        }
+                        input[type="checkbox"]:checked ~ .todo-content{
+                            text-decoration: line-through;
+                            color: $Dark-Grayish-Blue;
+                        }
+                        
+                        border-bottom: 1px solid $Dark-Theme-Very-Dark-Grayish-Blue-1;
+                    }
+                    .hide{
+                        display: none;
+                    }
+                    li:hover{
+                        box-shadow: 0 3px 10px $Dark-Theme-Very-Dark-Blue
+                    }
+                }
+            }
+        }
+    }
+    .bottom-items{
+        background-color: $Dark-Theme-Very-Dark-Grayish-Blue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        .filter{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            width: 100%;
+            top: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $Dark-Theme-Very-Dark-Grayish-Blue;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            label{
+                margin: 0 .5rem;
+                cursor: pointer;
+                input[type="radio"]:checked + span{
+                    color: $Bright-Blue;
+                }
+                
+            }
+        }
+        .clear{
+            background-color: transparent;
+            color: $Light-Grayish-Blue;
+        }
+    }
+}
